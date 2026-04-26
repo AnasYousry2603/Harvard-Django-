@@ -1,0 +1,18 @@
+{% extends "tasks/layout.html" %}
+<!--  inheriting layout from this file -->
+
+<!-- except this part -->
+{% block body %}
+        <h1>Tasks</h1>
+        <!-- i want to loop over the tasks 
+        and create a list item for each one of them-->
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% empty %}
+                <li>No tasks.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'tasks:add' %}">Add a New Task</a>
+{% endblock %}
+    
